@@ -13,6 +13,9 @@ public abstract class Participant {
 	 * @param healthCredits	number of health credits a participant has
 	 */
 	public Participant(int healthCredits) {
+		if (healthCredits < 1) {
+			throw new IllegalArgumentException("Invalid number of health credits.");
+		}
 		this.healthCredits = healthCredits;
 	}
 	
