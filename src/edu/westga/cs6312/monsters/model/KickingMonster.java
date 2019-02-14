@@ -16,7 +16,7 @@ public class KickingMonster extends Participant {
 
 	@Override
 	public String toString() {
-		return "A Kicking Monster with " + super.toString();
+		return "a Kicking Monster with " + super.toString();
 	}
 
 	@Override

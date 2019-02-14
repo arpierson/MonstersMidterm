@@ -3,7 +3,7 @@ package edu.westga.cs6312.monsters.model;
 /**
  * Child class of Participant that defines a Player in the game.
  * @author Allen Pierson
- *@version 02132019
+ * @version 02132019
  */
 public class Player extends Participant {
 	

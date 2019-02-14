@@ -3,7 +3,7 @@ package edu.westga.cs6312.monsters.model;
 /**
  * Abstract class that defines a game participant.
  * @author Allen Pierson
- *@version 02132019
+ * @version 02132019
  */
 public abstract class Participant {
 	private int healthCredits;
@@ -11,6 +11,8 @@ public abstract class Participant {
 	/**
 	 * A 1-parameter constructor that instantiates the instance variable.
 	 * @param healthCredits	number of health credits a participant has
+	 * Precondition:	healthCredits >= 1
+	 * Postcondition:	A Participant with a number of health credits >= 1
 	 */
 	public Participant(int healthCredits) {
 		if (healthCredits < 1) {
