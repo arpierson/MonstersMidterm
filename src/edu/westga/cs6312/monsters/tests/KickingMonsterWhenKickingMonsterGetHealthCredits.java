@@ -14,7 +14,7 @@ import edu.westga.cs6312.monsters.model.KickingMonster;
 class KickingMonsterWhenKickingMonsterGetHealthCredits {
 
 	@Test
-	void testGetHealthCredits() {
+	void testKickingMonsterGetHealthCredits() {
 		KickingMonster testMonster = new KickingMonster();
 		int result = testMonster.getHealthCredits();
 		assertEquals(100, result);

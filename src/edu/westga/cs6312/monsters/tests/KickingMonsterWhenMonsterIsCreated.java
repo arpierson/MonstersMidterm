@@ -14,7 +14,7 @@ import edu.westga.cs6312.monsters.model.KickingMonster;
 class KickingMonsterWhenMonsterIsCreated {
 
 	@Test
-	void testToString() {
+	void testWhenKickingMonsterIsCreated() {
 		KickingMonster testMonster = new KickingMonster();
 		String result = testMonster.toString();
 		assertEquals("A Kicking Monster with 100 health credits remaining.", result);

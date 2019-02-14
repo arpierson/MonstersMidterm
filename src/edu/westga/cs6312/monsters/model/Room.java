@@ -13,8 +13,10 @@ public class Room {
 	 * 1-parameter constructor that instantiates the instance variables.
 	 * @param roomNumber The identifying number for the Room.
 	 */
-	//Write error checking for parameter
 	public Room(int roomNumber) {
+		if (this.roomNumber < 0 || this.roomNumber > 9) {
+			throw new IllegalArgumentException("Invalid room number.");
+		}
 		this.roomNumber = roomNumber;
 		this.setupRoom();
 	}

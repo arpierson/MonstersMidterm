@@ -14,7 +14,7 @@ import edu.westga.cs6312.monsters.model.Player;
 class PlayerWhenPlayerGethealthCredits {
 
 	@Test
-	void testGetHealthCredits() {
+	void testGetHealthCreditsFromNewPlayer() {
 		Player testPlayer = new Player();
 		int result = testPlayer.getHealthCredits();
 		assertEquals(100, result);

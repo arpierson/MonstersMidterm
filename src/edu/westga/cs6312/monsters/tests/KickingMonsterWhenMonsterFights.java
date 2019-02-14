@@ -14,7 +14,7 @@ import edu.westga.cs6312.monsters.model.KickingMonster;
 class KickingMonsterWhenMonsterFights {
 
 	@Test
-	void testFight() {
+	void testKickingMonsterFight() {
 		KickingMonster testMonster = new KickingMonster();
 		int result = testMonster.fight();
 		assertEquals(30, result);
