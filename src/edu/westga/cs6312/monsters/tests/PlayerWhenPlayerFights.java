@@ -6,6 +6,11 @@ import org.junit.jupiter.api.Test;
 
 import edu.westga.cs6312.monsters.model.Player;
 
+/**
+ * JUnit test class for Player fight()
+ * @author Allen Pierson
+ * @version02142019
+ */
 class PlayerWhenPlayerFights {
 
 	@Test
