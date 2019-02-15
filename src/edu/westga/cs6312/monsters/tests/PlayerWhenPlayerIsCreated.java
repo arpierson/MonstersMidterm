@@ -17,7 +17,7 @@ class PlayerWhenPlayerIsCreated {
 	void testWhenPlayerIsCreated() {
 		Player testPlayer = new Player();
 		String result = testPlayer.toString();
-		assertEquals("You have 100 health credits remaining.", result);
+		assertEquals("The player has 100 health credits", result);
 	}
 
 }
