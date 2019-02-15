@@ -41,23 +41,24 @@ public class Room {
 	public String toString() {
 		String roomString;
 		if (this.monster != null) {
-			roomString = "The player is currently in " + this.getLocation() + " with " + this.monster.toString();
+			roomString = this.getLocation() + " with " + this.monster.toString();
 		} else {
-			roomString = "The player is currently in " + this.getLocation() + " with no Monster inside.";
+			roomString = this.getLocation() + " with no Monster inside";
 		}
 		return roomString;
 	}
 
 	private void setupRoom() {
-		int getsMonster = (int) (Math.random() * (2 - 1)) + 1;
-		if (getsMonster == 2) {
-			this.createMonster();
+		int getsMonster = ((int) (Math.random() * 2));
+		if (getsMonster == 1) {
+			this.monster = this.createMonster();
 		} else {
 			this.monster = null;
 		}
 	}
 	
 	private Participant createMonster() {
-		return new KickingMonster();
+		KickingMonster kickingMonster = new KickingMonster();
+		return kickingMonster;
 	}
 }

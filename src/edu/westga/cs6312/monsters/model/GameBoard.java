@@ -36,18 +36,29 @@ public class GameBoard {
 	
 	/**
 	 * Getter method for the current room number
-	 * @return the current room number
+	 * @return A String description of the current room location
 	 */
 	public String getCurrentRoom() {
 		return this.theMap[this.currentRoom].getLocation();
 	}
+	
+	/**
+	 * Returns the String description of the current room the Player is in.
+	 * @return the String description of the current room the Player is in.
+	 */
+	public String describeCurrentRoom() {
+		return this.theMap[this.currentRoom].toString() + "\n";
+	}
 
 	@Override
 	public String toString() {
+		int tempCurrentRoom = this.currentRoom;
 		String mapDescription = "";
 		for (int current = 0; current < this.theMap.length; current++) {
-			mapDescription += this.getCurrentRoom() + "\n";
+			mapDescription += this.describeCurrentRoom();
+			this.currentRoom++;
 		}
-		return mapDescription + this.getPlayer() + "\n" + this.getCurrentRoom();
+		this.currentRoom = tempCurrentRoom;
+		return mapDescription + "\n" + this.getPlayer() + " and is located at " + this.describeCurrentRoom() + "\n";
 	}
 }

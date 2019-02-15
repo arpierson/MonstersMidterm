@@ -28,7 +28,7 @@ public class MonsterTUI {
 	 * Displays the TUI to the end user.
 	 */
 	public void run() {
-		System.out.println("Welcome to \"A Tour of Monsters\"");
+		System.out.println("Welcome to \"A Tour of Monsters\"\n");
 		int userInput;
 		do {
 			this.displayMenu();
@@ -36,11 +36,11 @@ public class MonsterTUI {
 			System.out.println();
 			
 			switch (userInput) {
-				case 1: this.theBoard.getCurrentRoom();
+				case 1: this.describeRoom();
 						break;
-				case 2: this.theBoard.getPlayer();
+				case 2: this.describePlayer();
 						break;
-				case 3: this.theBoard.toString();
+				case 3: this.describeGameBoard();
 						break;
 				case 9: break;
 				default: System.out.println("Invalid choice. Please try again.\n");
@@ -61,5 +61,17 @@ public class MonsterTUI {
 		System.out.println("2 - Describe player");
 		System.out.println("3 - Describe game board");
 		System.out.println("9 - Quit");
+	}
+	
+	private void describeRoom() {
+		System.out.println("The player is currently in " + this.theBoard.describeCurrentRoom());
+	}
+	
+	private void describePlayer() {
+		System.out.println(this.theBoard.getPlayer() + " and is located in " + this.theBoard.getCurrentRoom() + "\n");
+	}
+	
+	private void describeGameBoard() {
+		System.out.println(this.theBoard.toString());
 	}
 }

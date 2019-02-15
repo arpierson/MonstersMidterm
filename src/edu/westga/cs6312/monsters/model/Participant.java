@@ -31,7 +31,7 @@ public abstract class Participant {
 
 	@Override
 	public String toString() {
-		return this.healthCredits + " health credits remaining.";
+		return this.healthCredits + " health credits";
 	}
 	
 	/**

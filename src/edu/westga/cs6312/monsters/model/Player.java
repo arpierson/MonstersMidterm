@@ -16,7 +16,7 @@ public class Player extends Participant {
 
 	@Override
 	public String toString() {
-		return "You have " + super.toString();
+		return "The player has " + super.toString();
 	}
 
 	@Override
