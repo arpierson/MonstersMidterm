@@ -30,8 +30,8 @@ public class GameBoard {
 	 * Getter method for the current Player
 	 * @return the current Player object
 	 */
-	public String getPlayer() {
-		return this.thePlayer.toString();
+	public Participant getPlayer() {
+		return this.thePlayer;
 	}
 	
 	/**
@@ -40,6 +40,14 @@ public class GameBoard {
 	 */
 	public String getCurrentRoom() {
 		return this.theMap[this.currentRoom].getLocation();
+	}
+	
+	/**
+	 * Returns the current room's monster if it exists
+	 * @return the current room's monster if it exists
+	 */
+	public Participant getCurrentRoomMonster() {
+		return this.theMap[this.currentRoom].getMonster();
 	}
 	
 	/**
@@ -71,6 +79,16 @@ public class GameBoard {
 			this.currentRoom--;
 		}
 	}
+	
+	/**
+	 * Deducts health points from Player and Monster as they fight.
+	 */
+	public void fight() {
+		if (this.theMap[this.currentRoom].getMonster() != null) {
+			this.thePlayer.setHealthCredits(this.thePlayer.getHealthCredits() - this.theMap[this.currentRoom].getMonster().fight());
+			this.theMap[this.currentRoom].getMonster().setHealthCredits(this.theMap[this.currentRoom].getMonster().getHealthCredits() - this.thePlayer.fight());
+		}
+	}
 
 	@Override
 	public String toString() {
@@ -81,6 +99,6 @@ public class GameBoard {
 			this.currentRoom++;
 		}
 		this.currentRoom = tempCurrentRoom;
-		return mapDescription + "\n" + this.getPlayer() + " and is located at " + this.describeCurrentRoom() + "\n";
+		return mapDescription + "\n" + this.thePlayer.toString() + " and is located at " + this.describeCurrentRoom() + "\n";
 	}
 }

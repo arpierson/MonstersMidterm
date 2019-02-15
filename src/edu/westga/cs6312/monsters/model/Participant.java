@@ -28,6 +28,14 @@ public abstract class Participant {
 	public int getHealthCredits() {
 		return this.healthCredits;
 	}
+	
+	/**
+	 * Setter method for the Participant's health credits
+	 * @param newAmount new value for Participant's health credits
+	 */
+	public void setHealthCredits(int newAmount) {
+		this.healthCredits = newAmount;
+	}
 
 	@Override
 	public String toString() {

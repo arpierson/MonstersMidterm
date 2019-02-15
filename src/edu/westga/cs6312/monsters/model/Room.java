@@ -30,11 +30,11 @@ public class Room {
 	}
 	
 	/**
-	 * Returns a String description of the current monster.
-	 * @return	Returns a String description of the current Room number.
+	 * Returns  the current monster.
+	 * @return	Returns the current monster.
 	 */
-	public String getMonster() {
-		return this.monster.toString();
+	public Participant getMonster() {
+		return this.monster;
 	}
 	
 	@Override

@@ -44,6 +44,8 @@ public class MonsterTUI {
 						break;
 				case 4: this.move();
 						break;
+				case 5: this.fight();
+						break;
 				case 9: break;
 				default: System.out.println("Invalid choice. Please try again.\n");
 			}
@@ -63,6 +65,7 @@ public class MonsterTUI {
 		System.out.println("\t2 - Describe player");
 		System.out.println("\t3 - Describe game board");
 		System.out.println("\t4 - Move");
+		System.out.println("\t5 - Fight");
 		System.out.println("\t9 - Quit");
 	}
 	
@@ -88,6 +91,16 @@ public class MonsterTUI {
 			this.describeRoom();
 		} else {
 			System.out.println("Invalid direction number. Returning to main menu.\n");
+		}
+	}
+	
+	private void fight() {
+		if (this.theBoard.getCurrentRoomMonster() == null) {
+			System.out.println("There is no monster to fight.");
+		} else {
+			this.theBoard.fight();
+			System.out.println("The monster now has: " + this.theBoard.getCurrentRoomMonster().getHealthCredits() + " health credits remaining.");
+			System.out.println("The player now has: " + this.theBoard.getPlayer().getHealthCredits() + " health credits remaining.");
 		}
 	}
 }
