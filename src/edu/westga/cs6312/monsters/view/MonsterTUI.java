@@ -42,6 +42,8 @@ public class MonsterTUI {
 						break;
 				case 3: this.describeGameBoard();
 						break;
+				case 4: this.move();
+						break;
 				case 9: break;
 				default: System.out.println("Invalid choice. Please try again.\n");
 			}
@@ -57,10 +59,11 @@ public class MonsterTUI {
 	}
 	
 	private void displayMenu() {
-		System.out.println("1 - Describe room");
-		System.out.println("2 - Describe player");
-		System.out.println("3 - Describe game board");
-		System.out.println("9 - Quit");
+		System.out.println("\t1 - Describe room");
+		System.out.println("\t2 - Describe player");
+		System.out.println("\t3 - Describe game board");
+		System.out.println("\t4 - Move");
+		System.out.println("\t9 - Quit");
 	}
 	
 	private void describeRoom() {
@@ -73,5 +76,18 @@ public class MonsterTUI {
 	
 	private void describeGameBoard() {
 		System.out.println(this.theBoard.toString());
+	}
+	
+	private void move() {
+		int userInput = this.getUserNumber("1 - Left\n2 - Right\nEnter the direction you would like to move: ");
+		if (userInput == 1) {
+			this.theBoard.moveLeft();
+			this.describeRoom();
+		} else if (userInput == 2) {
+			this.theBoard.moveRight();
+			this.describeRoom();
+		} else {
+			System.out.println("Invalid direction number. Returning to main menu.\n");
+		}
 	}
 }
