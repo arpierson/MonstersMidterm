@@ -41,9 +41,9 @@ public class Room {
 	public String toString() {
 		String roomString;
 		if (this.monster != null) {
-			roomString = this.getLocation() + " with " + this.monster.toString();
+			roomString = "The player is currently in " + this.getLocation() + " with " + this.monster.toString();
 		} else {
-			roomString = this.getLocation() + " with no monsters";
+			roomString = "The player is currently in " + this.getLocation() + " with no Monster inside.";
 		}
 		return roomString;
 	}
