@@ -50,7 +50,7 @@ public class MonsterTUI {
 	}
 	
 	private int getUserNumber(String message) {
-		System.out.println(message);
+		System.out.print(message);
 		String userChoiceString = this.input.nextLine();
 		int userChoice = Integer.parseInt(userChoiceString);
 		return userChoice;

@@ -17,7 +17,7 @@ class KickingMonsterWhenMonsterIsCreated {
 	void testWhenKickingMonsterIsCreated() {
 		KickingMonster testMonster = new KickingMonster();
 		String result = testMonster.toString();
-		assertEquals("A Kicking Monster with 100 health credits remaining.", result);
+		assertEquals("Kicking Monster with 100 health credits", result);
 	}
 
 }
