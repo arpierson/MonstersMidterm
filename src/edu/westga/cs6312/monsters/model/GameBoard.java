@@ -49,6 +49,28 @@ public class GameBoard {
 	public String describeCurrentRoom() {
 		return this.theMap[this.currentRoom].toString() + "\n";
 	}
+	
+	/**
+	 * Moves the Player one Room to the right
+	 */
+	public void moveRight() {
+		if (this.currentRoom == 9) {
+			this.currentRoom = 0;
+		} else {
+			this.currentRoom++;
+		}
+	}
+	
+	/**
+	 * Moves the Player one Room to the left
+	 */
+	public void moveLeft() {
+		if (this.currentRoom == 0) {
+			this.currentRoom = 9;
+		} else {
+			this.currentRoom--;
+		}
+	}
 
 	@Override
 	public String toString() {
