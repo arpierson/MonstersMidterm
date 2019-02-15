@@ -26,4 +26,11 @@ class RoomWhenRoomGetLocation {
 		String result = testRoom.getLocation();
 		assertEquals("Room at (9)", result);
 	}
+	
+	@Test
+	void testRoomGetLocationWhenLocationIs3() {
+		Room testRoom = new Room(3);
+		String result = testRoom.getLocation();
+		assertEquals("Room at (3)", result);
+	}
 }

@@ -17,8 +17,8 @@ class GameBoardWhenGameBoardGetCurrentRoom {
 	@Test
 	void testGetCurrentRoomFromNewGameBoard() {
 		GameBoard testBoard = new GameBoard();
-		int result = testBoard.getCurrentRoom();
-		assertEquals(0, result);
+		String result = testBoard.getCurrentRoom();
+		assertEquals("Room at (0)", result);
 	}
 
 }

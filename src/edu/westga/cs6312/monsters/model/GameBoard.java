@@ -39,7 +39,7 @@ public class GameBoard {
 	 * @return the current room number
 	 */
 	public String getCurrentRoom() {
-		return this.theMap[this.currentRoom].toString();
+		return this.theMap[this.currentRoom].getLocation();
 	}
 
 	@Override
