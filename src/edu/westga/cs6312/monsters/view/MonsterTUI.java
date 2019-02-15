@@ -30,6 +30,7 @@ public class MonsterTUI {
 	public void run() {
 		System.out.println("Welcome to \"A Tour of Monsters\"\n");
 		int userInput;
+		int currentPlayerHealthCredits;
 		do {
 			this.displayMenu();
 			userInput = this.getUserNumber("Please enter your choice: ");
@@ -46,11 +47,14 @@ public class MonsterTUI {
 						break;
 				case 5: this.fight();
 						break;
-				case 9: break;
+				case 9: System.out.println("Thank you for playing. Goodbye.");
+						break;
 				default: System.out.println("Invalid choice. Please try again.\n");
 			}
-		} while (userInput != 9);
-		System.out.println("Thank you for playing. Goodbye.");
+			
+			currentPlayerHealthCredits = this.theBoard.getPlayer().getHealthCredits();
+		} while (userInput != 9 && currentPlayerHealthCredits != 0);
+		this.endGameMessage();
 	}
 	
 	private int getUserNumber(String message) {
@@ -93,14 +97,20 @@ public class MonsterTUI {
 			System.out.println("Invalid direction number. Returning to main menu.\n");
 		}
 	}
-	
+
 	private void fight() {
 		if (this.theBoard.getCurrentRoomMonster() == null) {
-			System.out.println("There is no monster to fight.");
+			System.out.println("There is no monster to fight.\n");
+		} else if (this.theBoard.getCurrentRoomMonster().getHealthCredits() == 0) {
+			System.out.println("The monster has already been defeated.\n");
 		} else {
 			this.theBoard.fight();
 			System.out.println("The monster now has: " + this.theBoard.getCurrentRoomMonster().getHealthCredits() + " health credits remaining.");
-			System.out.println("The player now has: " + this.theBoard.getPlayer().getHealthCredits() + " health credits remaining.");
+			System.out.println("The player now has: " + this.theBoard.getPlayer().getHealthCredits() + " health credits remaining.\n");
 		}
+	}
+	
+	private void endGameMessage() {
+		System.out.println("The player ended the game with " + this.theBoard.getPlayer().getHealthCredits() + " health credits remaining.");
 	}
 }

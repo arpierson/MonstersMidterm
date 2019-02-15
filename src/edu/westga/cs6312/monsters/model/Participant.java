@@ -34,7 +34,11 @@ public abstract class Participant {
 	 * @param newAmount new value for Participant's health credits
 	 */
 	public void setHealthCredits(int newAmount) {
-		this.healthCredits = newAmount;
+		if (newAmount < 0) {
+			this.healthCredits = 0;
+		} else {
+			this.healthCredits = newAmount;
+		}
 	}
 
 	@Override

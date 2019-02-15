@@ -93,6 +93,7 @@ public class GameBoard {
 	@Override
 	public String toString() {
 		int tempCurrentRoom = this.currentRoom;
+		this.currentRoom = 0;
 		String mapDescription = "";
 		for (int current = 0; current < this.theMap.length; current++) {
 			mapDescription += this.describeCurrentRoom();
