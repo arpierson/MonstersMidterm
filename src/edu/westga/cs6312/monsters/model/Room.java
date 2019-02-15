@@ -58,7 +58,15 @@ public class Room {
 	}
 	
 	private Participant createMonster() {
-		KickingMonster kickingMonster = new KickingMonster();
-		return kickingMonster;
+		int whichMonster = ((int) (Math.random() * 2));
+		Participant theMonster = null;
+		
+		if (whichMonster == 1) {
+			theMonster = new KickingMonster();
+		} else {
+			theMonster = new PunchingMonster();
+		}
+		
+		return theMonster;
 	}
 }
