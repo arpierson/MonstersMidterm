@@ -36,7 +36,7 @@ public class GameBoard {
 	
 	/**
 	 * Getter method for the current room number
-	 * @return A String description of the current room location
+	 * @return A String description of the current room number
 	 */
 	public String getCurrentRoom() {
 		return this.theMap[this.currentRoom].getLocation();
