@@ -20,5 +20,34 @@ class GameBoardWhenGameBoardGetCurrentRoom {
 		String result = testBoard.getCurrentRoom();
 		assertEquals("Room at (0)", result);
 	}
+	
+	@Test
+	void testGetCurrentRoomAfterMovingLeftThreeTimes() {
+		GameBoard testBoard = new GameBoard();
+		testBoard.moveLeft();
+		testBoard.moveLeft();
+		testBoard.moveLeft();
+		String result = testBoard.getCurrentRoom();
+		assertEquals("Room at (7)", result);
+	}
+	
+	@Test
+	void testGetCurrentRoomAfterMovingRightThreeTimes() {
+		GameBoard testBoard = new GameBoard();
+		testBoard.moveRight();
+		testBoard.moveRight();
+		testBoard.moveRight();
+		String result = testBoard.getCurrentRoom();
+		assertEquals("Room at (3)", result);
+	}
+	
+	@Test
+	void testGetCurrentRoomAfterMovingRightThenLeft() {
+		GameBoard testBoard = new GameBoard();
+		testBoard.moveRight();
+		testBoard.moveLeft();
+		String result = testBoard.getCurrentRoom();
+		assertEquals("Room at (0)", result);
+	}
 
 }
