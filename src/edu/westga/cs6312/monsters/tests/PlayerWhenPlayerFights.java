@@ -14,7 +14,7 @@ import edu.westga.cs6312.monsters.model.Player;
 class PlayerWhenPlayerFights {
 
 	@Test
-	void testPlayerFight() {
+	void testWhenPlayerFights() {
 		Player testPlayer = new Player();
 		int result = testPlayer.fight();
 		assertEquals(50, result);
