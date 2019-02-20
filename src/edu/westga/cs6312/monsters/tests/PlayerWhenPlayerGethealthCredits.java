@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
+import edu.westga.cs6312.monsters.model.KickingMonster;
 import edu.westga.cs6312.monsters.model.Player;
 
 /**
@@ -18,6 +19,15 @@ class PlayerWhenPlayerGethealthCredits {
 		Player testPlayer = new Player();
 		int result = testPlayer.getHealthCredits();
 		assertEquals(100, result);
+	}
+	
+	@Test
+	void testGetHealthCreditsFromPlayerAfterSimulatedFight() {
+		Player testPlayer = new Player();
+		KickingMonster testMonster = new KickingMonster();
+		testPlayer.setHealthCredits(100 - testMonster.fight());
+		int result = testPlayer.getHealthCredits();
+		assertEquals(70, result);
 	}
 
 }
